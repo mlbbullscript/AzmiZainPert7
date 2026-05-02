@@ -1,0 +1,3029 @@
+======================================================================
+  RABBITMQ LOG — Pemesanan Tiket Konser (Binary Semaphore)
+======================================================================
+  Tanggal            : 2/5/2026, 15.58.57
+  Stok Awal          : 100 tiket
+  Total Request      : 500 pesan
+  Mekanisme          : RabbitMQ prefetch(1) = Binary Semaphore
+======================================================================
+
+[ RINGKASAN HASIL ]
+  Total Terjual      : 100
+  Total Ditolak      : 400  (tiket habis → NACK)
+  Sisa Tiket Final   : 0
+  Oversold?          : ✅ TIDAK — Stok Aman
+  Waktu Eksekusi     : 456 ms
+
+[ BUKTI RACE CONDITION DIATASI ]
+  Stok tidak pernah negatif : ✅ BENAR
+  Terjual ≤ Stok Awal       : ✅ BENAR
+  Berhasil + Ditolak = Total : ✅ BENAR
+
+======================================================================
+[ DETAIL TRANSAKSI ]
+======================================================================
+[0001] ORD-00001 | USER-0001
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 99
+  Timestamp   : 2026-05-02T08:58:57.401Z
+  Durasi      : 1 ms
+
+[0002] ORD-00002 | USER-0002
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 98
+  Timestamp   : 2026-05-02T08:58:57.403Z
+  Durasi      : 0 ms
+
+[0003] ORD-00003 | USER-0003
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 97
+  Timestamp   : 2026-05-02T08:58:57.405Z
+  Durasi      : 1 ms
+
+[0004] ORD-00004 | USER-0004
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 96
+  Timestamp   : 2026-05-02T08:58:57.405Z
+  Durasi      : 0 ms
+
+[0005] ORD-00005 | USER-0005
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 95
+  Timestamp   : 2026-05-02T08:58:57.406Z
+  Durasi      : 0 ms
+
+[0006] ORD-00006 | USER-0006
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 94
+  Timestamp   : 2026-05-02T08:58:57.407Z
+  Durasi      : 0 ms
+
+[0007] ORD-00007 | USER-0007
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 93
+  Timestamp   : 2026-05-02T08:58:57.408Z
+  Durasi      : 0 ms
+
+[0008] ORD-00008 | USER-0008
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 92
+  Timestamp   : 2026-05-02T08:58:57.409Z
+  Durasi      : 0 ms
+
+[0009] ORD-00009 | USER-0009
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 91
+  Timestamp   : 2026-05-02T08:58:57.410Z
+  Durasi      : 0 ms
+
+[0010] ORD-00010 | USER-0010
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 90
+  Timestamp   : 2026-05-02T08:58:57.411Z
+  Durasi      : 0 ms
+
+[0011] ORD-00011 | USER-0011
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 89
+  Timestamp   : 2026-05-02T08:58:57.412Z
+  Durasi      : 0 ms
+
+[0012] ORD-00012 | USER-0012
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 88
+  Timestamp   : 2026-05-02T08:58:57.413Z
+  Durasi      : 0 ms
+
+[0013] ORD-00013 | USER-0013
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 87
+  Timestamp   : 2026-05-02T08:58:57.414Z
+  Durasi      : 0 ms
+
+[0014] ORD-00014 | USER-0014
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 86
+  Timestamp   : 2026-05-02T08:58:57.415Z
+  Durasi      : 0 ms
+
+[0015] ORD-00015 | USER-0015
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 85
+  Timestamp   : 2026-05-02T08:58:57.416Z
+  Durasi      : 0 ms
+
+[0016] ORD-00016 | USER-0016
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 84
+  Timestamp   : 2026-05-02T08:58:57.417Z
+  Durasi      : 0 ms
+
+[0017] ORD-00017 | USER-0017
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 83
+  Timestamp   : 2026-05-02T08:58:57.418Z
+  Durasi      : 0 ms
+
+[0018] ORD-00018 | USER-0018
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 82
+  Timestamp   : 2026-05-02T08:58:57.419Z
+  Durasi      : 0 ms
+
+[0019] ORD-00019 | USER-0019
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 81
+  Timestamp   : 2026-05-02T08:58:57.420Z
+  Durasi      : 0 ms
+
+[0020] ORD-00020 | USER-0020
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 80
+  Timestamp   : 2026-05-02T08:58:57.421Z
+  Durasi      : 0 ms
+
+[0021] ORD-00021 | USER-0021
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 79
+  Timestamp   : 2026-05-02T08:58:57.422Z
+  Durasi      : 0 ms
+
+[0022] ORD-00022 | USER-0022
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 78
+  Timestamp   : 2026-05-02T08:58:57.423Z
+  Durasi      : 0 ms
+
+[0023] ORD-00023 | USER-0023
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 77
+  Timestamp   : 2026-05-02T08:58:57.424Z
+  Durasi      : 0 ms
+
+[0024] ORD-00024 | USER-0024
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 76
+  Timestamp   : 2026-05-02T08:58:57.425Z
+  Durasi      : 0 ms
+
+[0025] ORD-00025 | USER-0025
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 75
+  Timestamp   : 2026-05-02T08:58:57.425Z
+  Durasi      : 1 ms
+
+[0026] ORD-00026 | USER-0026
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 74
+  Timestamp   : 2026-05-02T08:58:57.426Z
+  Durasi      : 0 ms
+
+[0027] ORD-00027 | USER-0027
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 73
+  Timestamp   : 2026-05-02T08:58:57.427Z
+  Durasi      : 0 ms
+
+[0028] ORD-00028 | USER-0028
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 72
+  Timestamp   : 2026-05-02T08:58:57.428Z
+  Durasi      : 0 ms
+
+[0029] ORD-00029 | USER-0029
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 71
+  Timestamp   : 2026-05-02T08:58:57.429Z
+  Durasi      : 0 ms
+
+[0030] ORD-00030 | USER-0030
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 70
+  Timestamp   : 2026-05-02T08:58:57.429Z
+  Durasi      : 0 ms
+
+[0031] ORD-00031 | USER-0031
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 69
+  Timestamp   : 2026-05-02T08:58:57.430Z
+  Durasi      : 0 ms
+
+[0032] ORD-00032 | USER-0032
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 68
+  Timestamp   : 2026-05-02T08:58:57.431Z
+  Durasi      : 0 ms
+
+[0033] ORD-00033 | USER-0033
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 67
+  Timestamp   : 2026-05-02T08:58:57.431Z
+  Durasi      : 0 ms
+
+[0034] ORD-00034 | USER-0034
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 66
+  Timestamp   : 2026-05-02T08:58:57.432Z
+  Durasi      : 0 ms
+
+[0035] ORD-00035 | USER-0035
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 65
+  Timestamp   : 2026-05-02T08:58:57.433Z
+  Durasi      : 0 ms
+
+[0036] ORD-00036 | USER-0036
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 64
+  Timestamp   : 2026-05-02T08:58:57.434Z
+  Durasi      : 0 ms
+
+[0037] ORD-00037 | USER-0037
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 63
+  Timestamp   : 2026-05-02T08:58:57.435Z
+  Durasi      : 0 ms
+
+[0038] ORD-00038 | USER-0038
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 62
+  Timestamp   : 2026-05-02T08:58:57.436Z
+  Durasi      : 0 ms
+
+[0039] ORD-00039 | USER-0039
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 61
+  Timestamp   : 2026-05-02T08:58:57.437Z
+  Durasi      : 0 ms
+
+[0040] ORD-00040 | USER-0040
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 60
+  Timestamp   : 2026-05-02T08:58:57.438Z
+  Durasi      : 0 ms
+
+[0041] ORD-00041 | USER-0041
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 59
+  Timestamp   : 2026-05-02T08:58:57.439Z
+  Durasi      : 0 ms
+
+[0042] ORD-00042 | USER-0042
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 58
+  Timestamp   : 2026-05-02T08:58:57.440Z
+  Durasi      : 0 ms
+
+[0043] ORD-00043 | USER-0043
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 57
+  Timestamp   : 2026-05-02T08:58:57.440Z
+  Durasi      : 0 ms
+
+[0044] ORD-00044 | USER-0044
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 56
+  Timestamp   : 2026-05-02T08:58:57.441Z
+  Durasi      : 0 ms
+
+[0045] ORD-00045 | USER-0045
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 55
+  Timestamp   : 2026-05-02T08:58:57.442Z
+  Durasi      : 0 ms
+
+[0046] ORD-00046 | USER-0046
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 54
+  Timestamp   : 2026-05-02T08:58:57.443Z
+  Durasi      : 0 ms
+
+[0047] ORD-00047 | USER-0047
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 53
+  Timestamp   : 2026-05-02T08:58:57.443Z
+  Durasi      : 0 ms
+
+[0048] ORD-00048 | USER-0048
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 52
+  Timestamp   : 2026-05-02T08:58:57.444Z
+  Durasi      : 0 ms
+
+[0049] ORD-00049 | USER-0049
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 51
+  Timestamp   : 2026-05-02T08:58:57.445Z
+  Durasi      : 0 ms
+
+[0050] ORD-00050 | USER-0050
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 50
+  Timestamp   : 2026-05-02T08:58:57.445Z
+  Durasi      : 0 ms
+
+[0051] ORD-00051 | USER-0051
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 49
+  Timestamp   : 2026-05-02T08:58:57.447Z
+  Durasi      : 0 ms
+
+[0052] ORD-00052 | USER-0052
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 48
+  Timestamp   : 2026-05-02T08:58:57.448Z
+  Durasi      : 0 ms
+
+[0053] ORD-00053 | USER-0053
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 47
+  Timestamp   : 2026-05-02T08:58:57.448Z
+  Durasi      : 0 ms
+
+[0054] ORD-00054 | USER-0054
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 46
+  Timestamp   : 2026-05-02T08:58:57.449Z
+  Durasi      : 0 ms
+
+[0055] ORD-00055 | USER-0055
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 45
+  Timestamp   : 2026-05-02T08:58:57.450Z
+  Durasi      : 0 ms
+
+[0056] ORD-00056 | USER-0056
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 44
+  Timestamp   : 2026-05-02T08:58:57.451Z
+  Durasi      : 0 ms
+
+[0057] ORD-00057 | USER-0057
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 43
+  Timestamp   : 2026-05-02T08:58:57.452Z
+  Durasi      : 0 ms
+
+[0058] ORD-00058 | USER-0058
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 42
+  Timestamp   : 2026-05-02T08:58:57.453Z
+  Durasi      : 0 ms
+
+[0059] ORD-00059 | USER-0059
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 41
+  Timestamp   : 2026-05-02T08:58:57.453Z
+  Durasi      : 0 ms
+
+[0060] ORD-00060 | USER-0060
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 40
+  Timestamp   : 2026-05-02T08:58:57.454Z
+  Durasi      : 0 ms
+
+[0061] ORD-00061 | USER-0061
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 39
+  Timestamp   : 2026-05-02T08:58:57.455Z
+  Durasi      : 0 ms
+
+[0062] ORD-00062 | USER-0062
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 38
+  Timestamp   : 2026-05-02T08:58:57.455Z
+  Durasi      : 0 ms
+
+[0063] ORD-00063 | USER-0063
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 37
+  Timestamp   : 2026-05-02T08:58:57.456Z
+  Durasi      : 0 ms
+
+[0064] ORD-00064 | USER-0064
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 36
+  Timestamp   : 2026-05-02T08:58:57.457Z
+  Durasi      : 0 ms
+
+[0065] ORD-00065 | USER-0065
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 35
+  Timestamp   : 2026-05-02T08:58:57.458Z
+  Durasi      : 0 ms
+
+[0066] ORD-00066 | USER-0066
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 34
+  Timestamp   : 2026-05-02T08:58:57.459Z
+  Durasi      : 0 ms
+
+[0067] ORD-00067 | USER-0067
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 33
+  Timestamp   : 2026-05-02T08:58:57.460Z
+  Durasi      : 0 ms
+
+[0068] ORD-00068 | USER-0068
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 32
+  Timestamp   : 2026-05-02T08:58:57.461Z
+  Durasi      : 0 ms
+
+[0069] ORD-00069 | USER-0069
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 31
+  Timestamp   : 2026-05-02T08:58:57.462Z
+  Durasi      : 0 ms
+
+[0070] ORD-00070 | USER-0070
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 30
+  Timestamp   : 2026-05-02T08:58:57.465Z
+  Durasi      : 1 ms
+
+[0071] ORD-00071 | USER-0071
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 29
+  Timestamp   : 2026-05-02T08:58:57.466Z
+  Durasi      : 0 ms
+
+[0072] ORD-00072 | USER-0072
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 28
+  Timestamp   : 2026-05-02T08:58:57.467Z
+  Durasi      : 0 ms
+
+[0073] ORD-00073 | USER-0073
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 27
+  Timestamp   : 2026-05-02T08:58:57.468Z
+  Durasi      : 0 ms
+
+[0074] ORD-00074 | USER-0074
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 26
+  Timestamp   : 2026-05-02T08:58:57.469Z
+  Durasi      : 0 ms
+
+[0075] ORD-00075 | USER-0075
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 25
+  Timestamp   : 2026-05-02T08:58:57.470Z
+  Durasi      : 0 ms
+
+[0076] ORD-00076 | USER-0076
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 24
+  Timestamp   : 2026-05-02T08:58:57.471Z
+  Durasi      : 0 ms
+
+[0077] ORD-00077 | USER-0077
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 23
+  Timestamp   : 2026-05-02T08:58:57.472Z
+  Durasi      : 0 ms
+
+[0078] ORD-00078 | USER-0078
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 22
+  Timestamp   : 2026-05-02T08:58:57.474Z
+  Durasi      : 0 ms
+
+[0079] ORD-00079 | USER-0079
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 21
+  Timestamp   : 2026-05-02T08:58:57.474Z
+  Durasi      : 0 ms
+
+[0080] ORD-00080 | USER-0080
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 20
+  Timestamp   : 2026-05-02T08:58:57.475Z
+  Durasi      : 0 ms
+
+[0081] ORD-00081 | USER-0081
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 19
+  Timestamp   : 2026-05-02T08:58:57.477Z
+  Durasi      : 1 ms
+
+[0082] ORD-00082 | USER-0082
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 18
+  Timestamp   : 2026-05-02T08:58:57.478Z
+  Durasi      : 1 ms
+
+[0083] ORD-00083 | USER-0083
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 17
+  Timestamp   : 2026-05-02T08:58:57.479Z
+  Durasi      : 0 ms
+
+[0084] ORD-00084 | USER-0084
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 16
+  Timestamp   : 2026-05-02T08:58:57.480Z
+  Durasi      : 0 ms
+
+[0085] ORD-00085 | USER-0085
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 15
+  Timestamp   : 2026-05-02T08:58:57.481Z
+  Durasi      : 0 ms
+
+[0086] ORD-00086 | USER-0086
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 14
+  Timestamp   : 2026-05-02T08:58:57.483Z
+  Durasi      : 0 ms
+
+[0087] ORD-00087 | USER-0087
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 13
+  Timestamp   : 2026-05-02T08:58:57.485Z
+  Durasi      : 0 ms
+
+[0088] ORD-00088 | USER-0088
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 12
+  Timestamp   : 2026-05-02T08:58:57.486Z
+  Durasi      : 0 ms
+
+[0089] ORD-00089 | USER-0089
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 11
+  Timestamp   : 2026-05-02T08:58:57.488Z
+  Durasi      : 0 ms
+
+[0090] ORD-00090 | USER-0090
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 10
+  Timestamp   : 2026-05-02T08:58:57.489Z
+  Durasi      : 0 ms
+
+[0091] ORD-00091 | USER-0091
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 9
+  Timestamp   : 2026-05-02T08:58:57.491Z
+  Durasi      : 0 ms
+
+[0092] ORD-00092 | USER-0092
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 8
+  Timestamp   : 2026-05-02T08:58:57.493Z
+  Durasi      : 0 ms
+
+[0093] ORD-00093 | USER-0093
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 7
+  Timestamp   : 2026-05-02T08:58:57.495Z
+  Durasi      : 0 ms
+
+[0094] ORD-00094 | USER-0094
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 6
+  Timestamp   : 2026-05-02T08:58:57.496Z
+  Durasi      : 0 ms
+
+[0095] ORD-00095 | USER-0095
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 5
+  Timestamp   : 2026-05-02T08:58:57.497Z
+  Durasi      : 0 ms
+
+[0096] ORD-00096 | USER-0096
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 4
+  Timestamp   : 2026-05-02T08:58:57.498Z
+  Durasi      : 0 ms
+
+[0097] ORD-00097 | USER-0097
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 3
+  Timestamp   : 2026-05-02T08:58:57.499Z
+  Durasi      : 0 ms
+
+[0098] ORD-00098 | USER-0098
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 2
+  Timestamp   : 2026-05-02T08:58:57.500Z
+  Durasi      : 0 ms
+
+[0099] ORD-00099 | USER-0099
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 1
+  Timestamp   : 2026-05-02T08:58:57.501Z
+  Durasi      : 0 ms
+
+[0100] ORD-00100 | USER-0100
+  Status      : BERHASIL — Tiket Dipesan
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.502Z
+  Durasi      : 0 ms
+
+[0101] ORD-00101 | USER-0101
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.503Z
+  Durasi      : 0 ms
+
+[0102] ORD-00102 | USER-0102
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.505Z
+  Durasi      : 0 ms
+
+[0103] ORD-00103 | USER-0103
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.507Z
+  Durasi      : 0 ms
+
+[0104] ORD-00104 | USER-0104
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.508Z
+  Durasi      : 0 ms
+
+[0105] ORD-00105 | USER-0105
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.509Z
+  Durasi      : 0 ms
+
+[0106] ORD-00106 | USER-0106
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.510Z
+  Durasi      : 0 ms
+
+[0107] ORD-00107 | USER-0107
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.512Z
+  Durasi      : 0 ms
+
+[0108] ORD-00108 | USER-0108
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.512Z
+  Durasi      : 0 ms
+
+[0109] ORD-00109 | USER-0109
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.513Z
+  Durasi      : 0 ms
+
+[0110] ORD-00110 | USER-0110
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.514Z
+  Durasi      : 0 ms
+
+[0111] ORD-00111 | USER-0111
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.515Z
+  Durasi      : 0 ms
+
+[0112] ORD-00112 | USER-0112
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.516Z
+  Durasi      : 0 ms
+
+[0113] ORD-00113 | USER-0113
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.518Z
+  Durasi      : 0 ms
+
+[0114] ORD-00114 | USER-0114
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.519Z
+  Durasi      : 0 ms
+
+[0115] ORD-00115 | USER-0115
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.520Z
+  Durasi      : 0 ms
+
+[0116] ORD-00116 | USER-0116
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.521Z
+  Durasi      : 0 ms
+
+[0117] ORD-00117 | USER-0117
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.522Z
+  Durasi      : 0 ms
+
+[0118] ORD-00118 | USER-0118
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.523Z
+  Durasi      : 0 ms
+
+[0119] ORD-00119 | USER-0119
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.523Z
+  Durasi      : 0 ms
+
+[0120] ORD-00120 | USER-0120
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.524Z
+  Durasi      : 0 ms
+
+[0121] ORD-00121 | USER-0121
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.525Z
+  Durasi      : 0 ms
+
+[0122] ORD-00122 | USER-0122
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.526Z
+  Durasi      : 0 ms
+
+[0123] ORD-00123 | USER-0123
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.527Z
+  Durasi      : 0 ms
+
+[0124] ORD-00124 | USER-0124
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.528Z
+  Durasi      : 0 ms
+
+[0125] ORD-00125 | USER-0125
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.528Z
+  Durasi      : 1 ms
+
+[0126] ORD-00126 | USER-0126
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.529Z
+  Durasi      : 0 ms
+
+[0127] ORD-00127 | USER-0127
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.530Z
+  Durasi      : 0 ms
+
+[0128] ORD-00128 | USER-0128
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.531Z
+  Durasi      : 0 ms
+
+[0129] ORD-00129 | USER-0129
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.532Z
+  Durasi      : 0 ms
+
+[0130] ORD-00130 | USER-0130
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.533Z
+  Durasi      : 0 ms
+
+[0131] ORD-00131 | USER-0131
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.535Z
+  Durasi      : 1 ms
+
+[0132] ORD-00132 | USER-0132
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.536Z
+  Durasi      : 0 ms
+
+[0133] ORD-00133 | USER-0133
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.536Z
+  Durasi      : 0 ms
+
+[0134] ORD-00134 | USER-0134
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.537Z
+  Durasi      : 0 ms
+
+[0135] ORD-00135 | USER-0135
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.538Z
+  Durasi      : 0 ms
+
+[0136] ORD-00136 | USER-0136
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.539Z
+  Durasi      : 0 ms
+
+[0137] ORD-00137 | USER-0137
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.540Z
+  Durasi      : 0 ms
+
+[0138] ORD-00138 | USER-0138
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.541Z
+  Durasi      : 0 ms
+
+[0139] ORD-00139 | USER-0139
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.542Z
+  Durasi      : 0 ms
+
+[0140] ORD-00140 | USER-0140
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.542Z
+  Durasi      : 0 ms
+
+[0141] ORD-00141 | USER-0141
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.543Z
+  Durasi      : 0 ms
+
+[0142] ORD-00142 | USER-0142
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.544Z
+  Durasi      : 0 ms
+
+[0143] ORD-00143 | USER-0143
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.545Z
+  Durasi      : 1 ms
+
+[0144] ORD-00144 | USER-0144
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.545Z
+  Durasi      : 0 ms
+
+[0145] ORD-00145 | USER-0145
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.546Z
+  Durasi      : 0 ms
+
+[0146] ORD-00146 | USER-0146
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.547Z
+  Durasi      : 0 ms
+
+[0147] ORD-00147 | USER-0147
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.548Z
+  Durasi      : 0 ms
+
+[0148] ORD-00148 | USER-0148
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.548Z
+  Durasi      : 0 ms
+
+[0149] ORD-00149 | USER-0149
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.549Z
+  Durasi      : 0 ms
+
+[0150] ORD-00150 | USER-0150
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.550Z
+  Durasi      : 0 ms
+
+[0151] ORD-00151 | USER-0151
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.551Z
+  Durasi      : 0 ms
+
+[0152] ORD-00152 | USER-0152
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.553Z
+  Durasi      : 0 ms
+
+[0153] ORD-00153 | USER-0153
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.555Z
+  Durasi      : 0 ms
+
+[0154] ORD-00154 | USER-0154
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.556Z
+  Durasi      : 0 ms
+
+[0155] ORD-00155 | USER-0155
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.556Z
+  Durasi      : 1 ms
+
+[0156] ORD-00156 | USER-0156
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.557Z
+  Durasi      : 0 ms
+
+[0157] ORD-00157 | USER-0157
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.559Z
+  Durasi      : 0 ms
+
+[0158] ORD-00158 | USER-0158
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.559Z
+  Durasi      : 0 ms
+
+[0159] ORD-00159 | USER-0159
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.560Z
+  Durasi      : 0 ms
+
+[0160] ORD-00160 | USER-0160
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.561Z
+  Durasi      : 0 ms
+
+[0161] ORD-00161 | USER-0161
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.562Z
+  Durasi      : 0 ms
+
+[0162] ORD-00162 | USER-0162
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.563Z
+  Durasi      : 0 ms
+
+[0163] ORD-00163 | USER-0163
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.564Z
+  Durasi      : 0 ms
+
+[0164] ORD-00164 | USER-0164
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.565Z
+  Durasi      : 0 ms
+
+[0165] ORD-00165 | USER-0165
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.566Z
+  Durasi      : 0 ms
+
+[0166] ORD-00166 | USER-0166
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.567Z
+  Durasi      : 0 ms
+
+[0167] ORD-00167 | USER-0167
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.568Z
+  Durasi      : 0 ms
+
+[0168] ORD-00168 | USER-0168
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.568Z
+  Durasi      : 0 ms
+
+[0169] ORD-00169 | USER-0169
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.569Z
+  Durasi      : 0 ms
+
+[0170] ORD-00170 | USER-0170
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.570Z
+  Durasi      : 0 ms
+
+[0171] ORD-00171 | USER-0171
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.571Z
+  Durasi      : 0 ms
+
+[0172] ORD-00172 | USER-0172
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.572Z
+  Durasi      : 0 ms
+
+[0173] ORD-00173 | USER-0173
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.573Z
+  Durasi      : 0 ms
+
+[0174] ORD-00174 | USER-0174
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.574Z
+  Durasi      : 0 ms
+
+[0175] ORD-00175 | USER-0175
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.575Z
+  Durasi      : 0 ms
+
+[0176] ORD-00176 | USER-0176
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.576Z
+  Durasi      : 0 ms
+
+[0177] ORD-00177 | USER-0177
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.577Z
+  Durasi      : 0 ms
+
+[0178] ORD-00178 | USER-0178
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.578Z
+  Durasi      : 0 ms
+
+[0179] ORD-00179 | USER-0179
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.578Z
+  Durasi      : 0 ms
+
+[0180] ORD-00180 | USER-0180
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.579Z
+  Durasi      : 0 ms
+
+[0181] ORD-00181 | USER-0181
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.580Z
+  Durasi      : 0 ms
+
+[0182] ORD-00182 | USER-0182
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.581Z
+  Durasi      : 0 ms
+
+[0183] ORD-00183 | USER-0183
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.582Z
+  Durasi      : 0 ms
+
+[0184] ORD-00184 | USER-0184
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.583Z
+  Durasi      : 0 ms
+
+[0185] ORD-00185 | USER-0185
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.584Z
+  Durasi      : 0 ms
+
+[0186] ORD-00186 | USER-0186
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.585Z
+  Durasi      : 0 ms
+
+[0187] ORD-00187 | USER-0187
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.586Z
+  Durasi      : 0 ms
+
+[0188] ORD-00188 | USER-0188
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.587Z
+  Durasi      : 0 ms
+
+[0189] ORD-00189 | USER-0189
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.587Z
+  Durasi      : 0 ms
+
+[0190] ORD-00190 | USER-0190
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.588Z
+  Durasi      : 0 ms
+
+[0191] ORD-00191 | USER-0191
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.589Z
+  Durasi      : 0 ms
+
+[0192] ORD-00192 | USER-0192
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.590Z
+  Durasi      : 0 ms
+
+[0193] ORD-00193 | USER-0193
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.591Z
+  Durasi      : 0 ms
+
+[0194] ORD-00194 | USER-0194
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.591Z
+  Durasi      : 0 ms
+
+[0195] ORD-00195 | USER-0195
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.592Z
+  Durasi      : 0 ms
+
+[0196] ORD-00196 | USER-0196
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.593Z
+  Durasi      : 0 ms
+
+[0197] ORD-00197 | USER-0197
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.594Z
+  Durasi      : 0 ms
+
+[0198] ORD-00198 | USER-0198
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.595Z
+  Durasi      : 0 ms
+
+[0199] ORD-00199 | USER-0199
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.596Z
+  Durasi      : 0 ms
+
+[0200] ORD-00200 | USER-0200
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.597Z
+  Durasi      : 0 ms
+
+[0201] ORD-00201 | USER-0201
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.598Z
+  Durasi      : 0 ms
+
+[0202] ORD-00202 | USER-0202
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.599Z
+  Durasi      : 0 ms
+
+[0203] ORD-00203 | USER-0203
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.601Z
+  Durasi      : 0 ms
+
+[0204] ORD-00204 | USER-0204
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.602Z
+  Durasi      : 0 ms
+
+[0205] ORD-00205 | USER-0205
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.603Z
+  Durasi      : 0 ms
+
+[0206] ORD-00206 | USER-0206
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.604Z
+  Durasi      : 0 ms
+
+[0207] ORD-00207 | USER-0207
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.605Z
+  Durasi      : 0 ms
+
+[0208] ORD-00208 | USER-0208
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.606Z
+  Durasi      : 0 ms
+
+[0209] ORD-00209 | USER-0209
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.607Z
+  Durasi      : 0 ms
+
+[0210] ORD-00210 | USER-0210
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.607Z
+  Durasi      : 0 ms
+
+[0211] ORD-00211 | USER-0211
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.608Z
+  Durasi      : 0 ms
+
+[0212] ORD-00212 | USER-0212
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.609Z
+  Durasi      : 0 ms
+
+[0213] ORD-00213 | USER-0213
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.610Z
+  Durasi      : 0 ms
+
+[0214] ORD-00214 | USER-0214
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.611Z
+  Durasi      : 0 ms
+
+[0215] ORD-00215 | USER-0215
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.612Z
+  Durasi      : 0 ms
+
+[0216] ORD-00216 | USER-0216
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.613Z
+  Durasi      : 0 ms
+
+[0217] ORD-00217 | USER-0217
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.614Z
+  Durasi      : 0 ms
+
+[0218] ORD-00218 | USER-0218
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.614Z
+  Durasi      : 0 ms
+
+[0219] ORD-00219 | USER-0219
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.615Z
+  Durasi      : 0 ms
+
+[0220] ORD-00220 | USER-0220
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.616Z
+  Durasi      : 0 ms
+
+[0221] ORD-00221 | USER-0221
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.618Z
+  Durasi      : 0 ms
+
+[0222] ORD-00222 | USER-0222
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.619Z
+  Durasi      : 0 ms
+
+[0223] ORD-00223 | USER-0223
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.620Z
+  Durasi      : 0 ms
+
+[0224] ORD-00224 | USER-0224
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.620Z
+  Durasi      : 0 ms
+
+[0225] ORD-00225 | USER-0225
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.621Z
+  Durasi      : 0 ms
+
+[0226] ORD-00226 | USER-0226
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.622Z
+  Durasi      : 0 ms
+
+[0227] ORD-00227 | USER-0227
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.623Z
+  Durasi      : 0 ms
+
+[0228] ORD-00228 | USER-0228
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.624Z
+  Durasi      : 0 ms
+
+[0229] ORD-00229 | USER-0229
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.625Z
+  Durasi      : 0 ms
+
+[0230] ORD-00230 | USER-0230
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.626Z
+  Durasi      : 0 ms
+
+[0231] ORD-00231 | USER-0231
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.627Z
+  Durasi      : 0 ms
+
+[0232] ORD-00232 | USER-0232
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.628Z
+  Durasi      : 0 ms
+
+[0233] ORD-00233 | USER-0233
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.629Z
+  Durasi      : 0 ms
+
+[0234] ORD-00234 | USER-0234
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.630Z
+  Durasi      : 0 ms
+
+[0235] ORD-00235 | USER-0235
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.631Z
+  Durasi      : 0 ms
+
+[0236] ORD-00236 | USER-0236
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.632Z
+  Durasi      : 0 ms
+
+[0237] ORD-00237 | USER-0237
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.633Z
+  Durasi      : 0 ms
+
+[0238] ORD-00238 | USER-0238
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.634Z
+  Durasi      : 0 ms
+
+[0239] ORD-00239 | USER-0239
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.635Z
+  Durasi      : 0 ms
+
+[0240] ORD-00240 | USER-0240
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.636Z
+  Durasi      : 0 ms
+
+[0241] ORD-00241 | USER-0241
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.637Z
+  Durasi      : 0 ms
+
+[0242] ORD-00242 | USER-0242
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.639Z
+  Durasi      : 0 ms
+
+[0243] ORD-00243 | USER-0243
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.641Z
+  Durasi      : 0 ms
+
+[0244] ORD-00244 | USER-0244
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.642Z
+  Durasi      : 0 ms
+
+[0245] ORD-00245 | USER-0245
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.644Z
+  Durasi      : 0 ms
+
+[0246] ORD-00246 | USER-0246
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.646Z
+  Durasi      : 0 ms
+
+[0247] ORD-00247 | USER-0247
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.647Z
+  Durasi      : 0 ms
+
+[0248] ORD-00248 | USER-0248
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.648Z
+  Durasi      : 0 ms
+
+[0249] ORD-00249 | USER-0249
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.649Z
+  Durasi      : 0 ms
+
+[0250] ORD-00250 | USER-0250
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.650Z
+  Durasi      : 0 ms
+
+[0251] ORD-00251 | USER-0251
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.651Z
+  Durasi      : 0 ms
+
+[0252] ORD-00252 | USER-0252
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.651Z
+  Durasi      : 0 ms
+
+[0253] ORD-00253 | USER-0253
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.652Z
+  Durasi      : 0 ms
+
+[0254] ORD-00254 | USER-0254
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.653Z
+  Durasi      : 0 ms
+
+[0255] ORD-00255 | USER-0255
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.654Z
+  Durasi      : 0 ms
+
+[0256] ORD-00256 | USER-0256
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.655Z
+  Durasi      : 0 ms
+
+[0257] ORD-00257 | USER-0257
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.656Z
+  Durasi      : 0 ms
+
+[0258] ORD-00258 | USER-0258
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.656Z
+  Durasi      : 0 ms
+
+[0259] ORD-00259 | USER-0259
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.657Z
+  Durasi      : 0 ms
+
+[0260] ORD-00260 | USER-0260
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.658Z
+  Durasi      : 0 ms
+
+[0261] ORD-00261 | USER-0261
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.659Z
+  Durasi      : 0 ms
+
+[0262] ORD-00262 | USER-0262
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.660Z
+  Durasi      : 0 ms
+
+[0263] ORD-00263 | USER-0263
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.661Z
+  Durasi      : 0 ms
+
+[0264] ORD-00264 | USER-0264
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.662Z
+  Durasi      : 0 ms
+
+[0265] ORD-00265 | USER-0265
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.663Z
+  Durasi      : 0 ms
+
+[0266] ORD-00266 | USER-0266
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.664Z
+  Durasi      : 0 ms
+
+[0267] ORD-00267 | USER-0267
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.665Z
+  Durasi      : 0 ms
+
+[0268] ORD-00268 | USER-0268
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.666Z
+  Durasi      : 0 ms
+
+[0269] ORD-00269 | USER-0269
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.667Z
+  Durasi      : 0 ms
+
+[0270] ORD-00270 | USER-0270
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.669Z
+  Durasi      : 0 ms
+
+[0271] ORD-00271 | USER-0271
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.670Z
+  Durasi      : 0 ms
+
+[0272] ORD-00272 | USER-0272
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.671Z
+  Durasi      : 0 ms
+
+[0273] ORD-00273 | USER-0273
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.672Z
+  Durasi      : 1 ms
+
+[0274] ORD-00274 | USER-0274
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.672Z
+  Durasi      : 0 ms
+
+[0275] ORD-00275 | USER-0275
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.673Z
+  Durasi      : 0 ms
+
+[0276] ORD-00276 | USER-0276
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.674Z
+  Durasi      : 0 ms
+
+[0277] ORD-00277 | USER-0277
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.674Z
+  Durasi      : 0 ms
+
+[0278] ORD-00278 | USER-0278
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.675Z
+  Durasi      : 0 ms
+
+[0279] ORD-00279 | USER-0279
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.676Z
+  Durasi      : 0 ms
+
+[0280] ORD-00280 | USER-0280
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.677Z
+  Durasi      : 0 ms
+
+[0281] ORD-00281 | USER-0281
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.678Z
+  Durasi      : 0 ms
+
+[0282] ORD-00282 | USER-0282
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.679Z
+  Durasi      : 0 ms
+
+[0283] ORD-00283 | USER-0283
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.680Z
+  Durasi      : 0 ms
+
+[0284] ORD-00284 | USER-0284
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.681Z
+  Durasi      : 0 ms
+
+[0285] ORD-00285 | USER-0285
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.682Z
+  Durasi      : 0 ms
+
+[0286] ORD-00286 | USER-0286
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.682Z
+  Durasi      : 0 ms
+
+[0287] ORD-00287 | USER-0287
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.683Z
+  Durasi      : 0 ms
+
+[0288] ORD-00288 | USER-0288
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.685Z
+  Durasi      : 0 ms
+
+[0289] ORD-00289 | USER-0289
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.686Z
+  Durasi      : 0 ms
+
+[0290] ORD-00290 | USER-0290
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.686Z
+  Durasi      : 0 ms
+
+[0291] ORD-00291 | USER-0291
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.687Z
+  Durasi      : 0 ms
+
+[0292] ORD-00292 | USER-0292
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.688Z
+  Durasi      : 0 ms
+
+[0293] ORD-00293 | USER-0293
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.689Z
+  Durasi      : 0 ms
+
+[0294] ORD-00294 | USER-0294
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.690Z
+  Durasi      : 1 ms
+
+[0295] ORD-00295 | USER-0295
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.690Z
+  Durasi      : 0 ms
+
+[0296] ORD-00296 | USER-0296
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.691Z
+  Durasi      : 0 ms
+
+[0297] ORD-00297 | USER-0297
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.692Z
+  Durasi      : 0 ms
+
+[0298] ORD-00298 | USER-0298
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.693Z
+  Durasi      : 0 ms
+
+[0299] ORD-00299 | USER-0299
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.694Z
+  Durasi      : 0 ms
+
+[0300] ORD-00300 | USER-0300
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.695Z
+  Durasi      : 0 ms
+
+[0301] ORD-00301 | USER-0301
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.697Z
+  Durasi      : 0 ms
+
+[0302] ORD-00302 | USER-0302
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.698Z
+  Durasi      : 0 ms
+
+[0303] ORD-00303 | USER-0303
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.700Z
+  Durasi      : 0 ms
+
+[0304] ORD-00304 | USER-0304
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.701Z
+  Durasi      : 0 ms
+
+[0305] ORD-00305 | USER-0305
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.702Z
+  Durasi      : 0 ms
+
+[0306] ORD-00306 | USER-0306
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.703Z
+  Durasi      : 0 ms
+
+[0307] ORD-00307 | USER-0307
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.704Z
+  Durasi      : 0 ms
+
+[0308] ORD-00308 | USER-0308
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.704Z
+  Durasi      : 0 ms
+
+[0309] ORD-00309 | USER-0309
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.705Z
+  Durasi      : 0 ms
+
+[0310] ORD-00310 | USER-0310
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.706Z
+  Durasi      : 0 ms
+
+[0311] ORD-00311 | USER-0311
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.707Z
+  Durasi      : 0 ms
+
+[0312] ORD-00312 | USER-0312
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.708Z
+  Durasi      : 0 ms
+
+[0313] ORD-00313 | USER-0313
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.709Z
+  Durasi      : 0 ms
+
+[0314] ORD-00314 | USER-0314
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.710Z
+  Durasi      : 0 ms
+
+[0315] ORD-00315 | USER-0315
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.710Z
+  Durasi      : 0 ms
+
+[0316] ORD-00316 | USER-0316
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.711Z
+  Durasi      : 0 ms
+
+[0317] ORD-00317 | USER-0317
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.712Z
+  Durasi      : 0 ms
+
+[0318] ORD-00318 | USER-0318
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.712Z
+  Durasi      : 0 ms
+
+[0319] ORD-00319 | USER-0319
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.713Z
+  Durasi      : 0 ms
+
+[0320] ORD-00320 | USER-0320
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.714Z
+  Durasi      : 0 ms
+
+[0321] ORD-00321 | USER-0321
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.715Z
+  Durasi      : 0 ms
+
+[0322] ORD-00322 | USER-0322
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.715Z
+  Durasi      : 0 ms
+
+[0323] ORD-00323 | USER-0323
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.716Z
+  Durasi      : 0 ms
+
+[0324] ORD-00324 | USER-0324
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.718Z
+  Durasi      : 0 ms
+
+[0325] ORD-00325 | USER-0325
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.718Z
+  Durasi      : 0 ms
+
+[0326] ORD-00326 | USER-0326
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.719Z
+  Durasi      : 0 ms
+
+[0327] ORD-00327 | USER-0327
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.720Z
+  Durasi      : 0 ms
+
+[0328] ORD-00328 | USER-0328
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.720Z
+  Durasi      : 0 ms
+
+[0329] ORD-00329 | USER-0329
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.721Z
+  Durasi      : 0 ms
+
+[0330] ORD-00330 | USER-0330
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.722Z
+  Durasi      : 0 ms
+
+[0331] ORD-00331 | USER-0331
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.722Z
+  Durasi      : 0 ms
+
+[0332] ORD-00332 | USER-0332
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.723Z
+  Durasi      : 0 ms
+
+[0333] ORD-00333 | USER-0333
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.724Z
+  Durasi      : 0 ms
+
+[0334] ORD-00334 | USER-0334
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.724Z
+  Durasi      : 0 ms
+
+[0335] ORD-00335 | USER-0335
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.725Z
+  Durasi      : 0 ms
+
+[0336] ORD-00336 | USER-0336
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.726Z
+  Durasi      : 0 ms
+
+[0337] ORD-00337 | USER-0337
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.727Z
+  Durasi      : 0 ms
+
+[0338] ORD-00338 | USER-0338
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.728Z
+  Durasi      : 0 ms
+
+[0339] ORD-00339 | USER-0339
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.729Z
+  Durasi      : 0 ms
+
+[0340] ORD-00340 | USER-0340
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.729Z
+  Durasi      : 0 ms
+
+[0341] ORD-00341 | USER-0341
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.730Z
+  Durasi      : 0 ms
+
+[0342] ORD-00342 | USER-0342
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.731Z
+  Durasi      : 0 ms
+
+[0343] ORD-00343 | USER-0343
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.731Z
+  Durasi      : 0 ms
+
+[0344] ORD-00344 | USER-0344
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.732Z
+  Durasi      : 0 ms
+
+[0345] ORD-00345 | USER-0345
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.733Z
+  Durasi      : 0 ms
+
+[0346] ORD-00346 | USER-0346
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.734Z
+  Durasi      : 0 ms
+
+[0347] ORD-00347 | USER-0347
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.734Z
+  Durasi      : 0 ms
+
+[0348] ORD-00348 | USER-0348
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.735Z
+  Durasi      : 0 ms
+
+[0349] ORD-00349 | USER-0349
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.736Z
+  Durasi      : 0 ms
+
+[0350] ORD-00350 | USER-0350
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.737Z
+  Durasi      : 0 ms
+
+[0351] ORD-00351 | USER-0351
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.738Z
+  Durasi      : 0 ms
+
+[0352] ORD-00352 | USER-0352
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.739Z
+  Durasi      : 0 ms
+
+[0353] ORD-00353 | USER-0353
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.740Z
+  Durasi      : 0 ms
+
+[0354] ORD-00354 | USER-0354
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.741Z
+  Durasi      : 0 ms
+
+[0355] ORD-00355 | USER-0355
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.742Z
+  Durasi      : 0 ms
+
+[0356] ORD-00356 | USER-0356
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.742Z
+  Durasi      : 0 ms
+
+[0357] ORD-00357 | USER-0357
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.743Z
+  Durasi      : 0 ms
+
+[0358] ORD-00358 | USER-0358
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.744Z
+  Durasi      : 0 ms
+
+[0359] ORD-00359 | USER-0359
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.745Z
+  Durasi      : 0 ms
+
+[0360] ORD-00360 | USER-0360
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.746Z
+  Durasi      : 0 ms
+
+[0361] ORD-00361 | USER-0361
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.747Z
+  Durasi      : 0 ms
+
+[0362] ORD-00362 | USER-0362
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.747Z
+  Durasi      : 0 ms
+
+[0363] ORD-00363 | USER-0363
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.748Z
+  Durasi      : 0 ms
+
+[0364] ORD-00364 | USER-0364
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.749Z
+  Durasi      : 0 ms
+
+[0365] ORD-00365 | USER-0365
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.750Z
+  Durasi      : 0 ms
+
+[0366] ORD-00366 | USER-0366
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.751Z
+  Durasi      : 0 ms
+
+[0367] ORD-00367 | USER-0367
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.752Z
+  Durasi      : 0 ms
+
+[0368] ORD-00368 | USER-0368
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.753Z
+  Durasi      : 0 ms
+
+[0369] ORD-00369 | USER-0369
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.754Z
+  Durasi      : 0 ms
+
+[0370] ORD-00370 | USER-0370
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.754Z
+  Durasi      : 0 ms
+
+[0371] ORD-00371 | USER-0371
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.755Z
+  Durasi      : 0 ms
+
+[0372] ORD-00372 | USER-0372
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.756Z
+  Durasi      : 0 ms
+
+[0373] ORD-00373 | USER-0373
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.756Z
+  Durasi      : 0 ms
+
+[0374] ORD-00374 | USER-0374
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.757Z
+  Durasi      : 0 ms
+
+[0375] ORD-00375 | USER-0375
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.758Z
+  Durasi      : 0 ms
+
+[0376] ORD-00376 | USER-0376
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.759Z
+  Durasi      : 0 ms
+
+[0377] ORD-00377 | USER-0377
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.759Z
+  Durasi      : 0 ms
+
+[0378] ORD-00378 | USER-0378
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.760Z
+  Durasi      : 0 ms
+
+[0379] ORD-00379 | USER-0379
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.761Z
+  Durasi      : 0 ms
+
+[0380] ORD-00380 | USER-0380
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.762Z
+  Durasi      : 0 ms
+
+[0381] ORD-00381 | USER-0381
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.762Z
+  Durasi      : 0 ms
+
+[0382] ORD-00382 | USER-0382
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.763Z
+  Durasi      : 0 ms
+
+[0383] ORD-00383 | USER-0383
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.764Z
+  Durasi      : 0 ms
+
+[0384] ORD-00384 | USER-0384
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.764Z
+  Durasi      : 0 ms
+
+[0385] ORD-00385 | USER-0385
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.765Z
+  Durasi      : 0 ms
+
+[0386] ORD-00386 | USER-0386
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.766Z
+  Durasi      : 0 ms
+
+[0387] ORD-00387 | USER-0387
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.767Z
+  Durasi      : 0 ms
+
+[0388] ORD-00388 | USER-0388
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.767Z
+  Durasi      : 0 ms
+
+[0389] ORD-00389 | USER-0389
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.768Z
+  Durasi      : 0 ms
+
+[0390] ORD-00390 | USER-0390
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.769Z
+  Durasi      : 0 ms
+
+[0391] ORD-00391 | USER-0391
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.769Z
+  Durasi      : 0 ms
+
+[0392] ORD-00392 | USER-0392
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.770Z
+  Durasi      : 0 ms
+
+[0393] ORD-00393 | USER-0393
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.771Z
+  Durasi      : 0 ms
+
+[0394] ORD-00394 | USER-0394
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.772Z
+  Durasi      : 0 ms
+
+[0395] ORD-00395 | USER-0395
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.772Z
+  Durasi      : 0 ms
+
+[0396] ORD-00396 | USER-0396
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.773Z
+  Durasi      : 0 ms
+
+[0397] ORD-00397 | USER-0397
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.774Z
+  Durasi      : 0 ms
+
+[0398] ORD-00398 | USER-0398
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.774Z
+  Durasi      : 0 ms
+
+[0399] ORD-00399 | USER-0399
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.775Z
+  Durasi      : 0 ms
+
+[0400] ORD-00400 | USER-0400
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.775Z
+  Durasi      : 0 ms
+
+[0401] ORD-00401 | USER-0401
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.777Z
+  Durasi      : 0 ms
+
+[0402] ORD-00402 | USER-0402
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.777Z
+  Durasi      : 0 ms
+
+[0403] ORD-00403 | USER-0403
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.778Z
+  Durasi      : 1 ms
+
+[0404] ORD-00404 | USER-0404
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.779Z
+  Durasi      : 0 ms
+
+[0405] ORD-00405 | USER-0405
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.780Z
+  Durasi      : 0 ms
+
+[0406] ORD-00406 | USER-0406
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.781Z
+  Durasi      : 0 ms
+
+[0407] ORD-00407 | USER-0407
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.782Z
+  Durasi      : 0 ms
+
+[0408] ORD-00408 | USER-0408
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.783Z
+  Durasi      : 0 ms
+
+[0409] ORD-00409 | USER-0409
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.784Z
+  Durasi      : 0 ms
+
+[0410] ORD-00410 | USER-0410
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.785Z
+  Durasi      : 0 ms
+
+[0411] ORD-00411 | USER-0411
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.786Z
+  Durasi      : 0 ms
+
+[0412] ORD-00412 | USER-0412
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.787Z
+  Durasi      : 0 ms
+
+[0413] ORD-00413 | USER-0413
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.788Z
+  Durasi      : 0 ms
+
+[0414] ORD-00414 | USER-0414
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.789Z
+  Durasi      : 0 ms
+
+[0415] ORD-00415 | USER-0415
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.790Z
+  Durasi      : 0 ms
+
+[0416] ORD-00416 | USER-0416
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.790Z
+  Durasi      : 0 ms
+
+[0417] ORD-00417 | USER-0417
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.791Z
+  Durasi      : 0 ms
+
+[0418] ORD-00418 | USER-0418
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.792Z
+  Durasi      : 0 ms
+
+[0419] ORD-00419 | USER-0419
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.793Z
+  Durasi      : 0 ms
+
+[0420] ORD-00420 | USER-0420
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.794Z
+  Durasi      : 0 ms
+
+[0421] ORD-00421 | USER-0421
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.795Z
+  Durasi      : 0 ms
+
+[0422] ORD-00422 | USER-0422
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.796Z
+  Durasi      : 0 ms
+
+[0423] ORD-00423 | USER-0423
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.796Z
+  Durasi      : 0 ms
+
+[0424] ORD-00424 | USER-0424
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.797Z
+  Durasi      : 0 ms
+
+[0425] ORD-00425 | USER-0425
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.798Z
+  Durasi      : 0 ms
+
+[0426] ORD-00426 | USER-0426
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.798Z
+  Durasi      : 0 ms
+
+[0427] ORD-00427 | USER-0427
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.799Z
+  Durasi      : 0 ms
+
+[0428] ORD-00428 | USER-0428
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.800Z
+  Durasi      : 0 ms
+
+[0429] ORD-00429 | USER-0429
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.800Z
+  Durasi      : 0 ms
+
+[0430] ORD-00430 | USER-0430
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.801Z
+  Durasi      : 0 ms
+
+[0431] ORD-00431 | USER-0431
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.802Z
+  Durasi      : 0 ms
+
+[0432] ORD-00432 | USER-0432
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.802Z
+  Durasi      : 0 ms
+
+[0433] ORD-00433 | USER-0433
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.803Z
+  Durasi      : 0 ms
+
+[0434] ORD-00434 | USER-0434
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.804Z
+  Durasi      : 0 ms
+
+[0435] ORD-00435 | USER-0435
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.804Z
+  Durasi      : 0 ms
+
+[0436] ORD-00436 | USER-0436
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.805Z
+  Durasi      : 0 ms
+
+[0437] ORD-00437 | USER-0437
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.806Z
+  Durasi      : 0 ms
+
+[0438] ORD-00438 | USER-0438
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.806Z
+  Durasi      : 0 ms
+
+[0439] ORD-00439 | USER-0439
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.807Z
+  Durasi      : 0 ms
+
+[0440] ORD-00440 | USER-0440
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.808Z
+  Durasi      : 0 ms
+
+[0441] ORD-00441 | USER-0441
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.809Z
+  Durasi      : 0 ms
+
+[0442] ORD-00442 | USER-0442
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.810Z
+  Durasi      : 0 ms
+
+[0443] ORD-00443 | USER-0443
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.810Z
+  Durasi      : 0 ms
+
+[0444] ORD-00444 | USER-0444
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.811Z
+  Durasi      : 0 ms
+
+[0445] ORD-00445 | USER-0445
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.812Z
+  Durasi      : 0 ms
+
+[0446] ORD-00446 | USER-0446
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.813Z
+  Durasi      : 0 ms
+
+[0447] ORD-00447 | USER-0447
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.814Z
+  Durasi      : 0 ms
+
+[0448] ORD-00448 | USER-0448
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.814Z
+  Durasi      : 0 ms
+
+[0449] ORD-00449 | USER-0449
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.815Z
+  Durasi      : 0 ms
+
+[0450] ORD-00450 | USER-0450
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.816Z
+  Durasi      : 0 ms
+
+[0451] ORD-00451 | USER-0451
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.818Z
+  Durasi      : 0 ms
+
+[0452] ORD-00452 | USER-0452
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.819Z
+  Durasi      : 0 ms
+
+[0453] ORD-00453 | USER-0453
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.820Z
+  Durasi      : 0 ms
+
+[0454] ORD-00454 | USER-0454
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.821Z
+  Durasi      : 0 ms
+
+[0455] ORD-00455 | USER-0455
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.822Z
+  Durasi      : 0 ms
+
+[0456] ORD-00456 | USER-0456
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.822Z
+  Durasi      : 0 ms
+
+[0457] ORD-00457 | USER-0457
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.823Z
+  Durasi      : 0 ms
+
+[0458] ORD-00458 | USER-0458
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.824Z
+  Durasi      : 0 ms
+
+[0459] ORD-00459 | USER-0459
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.824Z
+  Durasi      : 0 ms
+
+[0460] ORD-00460 | USER-0460
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.825Z
+  Durasi      : 0 ms
+
+[0461] ORD-00461 | USER-0461
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.826Z
+  Durasi      : 0 ms
+
+[0462] ORD-00462 | USER-0462
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.826Z
+  Durasi      : 0 ms
+
+[0463] ORD-00463 | USER-0463
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.827Z
+  Durasi      : 0 ms
+
+[0464] ORD-00464 | USER-0464
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.828Z
+  Durasi      : 0 ms
+
+[0465] ORD-00465 | USER-0465
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.828Z
+  Durasi      : 0 ms
+
+[0466] ORD-00466 | USER-0466
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.829Z
+  Durasi      : 0 ms
+
+[0467] ORD-00467 | USER-0467
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.830Z
+  Durasi      : 0 ms
+
+[0468] ORD-00468 | USER-0468
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.830Z
+  Durasi      : 0 ms
+
+[0469] ORD-00469 | USER-0469
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.831Z
+  Durasi      : 0 ms
+
+[0470] ORD-00470 | USER-0470
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.831Z
+  Durasi      : 0 ms
+
+[0471] ORD-00471 | USER-0471
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.832Z
+  Durasi      : 0 ms
+
+[0472] ORD-00472 | USER-0472
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.833Z
+  Durasi      : 0 ms
+
+[0473] ORD-00473 | USER-0473
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.834Z
+  Durasi      : 0 ms
+
+[0474] ORD-00474 | USER-0474
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.835Z
+  Durasi      : 0 ms
+
+[0475] ORD-00475 | USER-0475
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.836Z
+  Durasi      : 0 ms
+
+[0476] ORD-00476 | USER-0476
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.837Z
+  Durasi      : 0 ms
+
+[0477] ORD-00477 | USER-0477
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.838Z
+  Durasi      : 0 ms
+
+[0478] ORD-00478 | USER-0478
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.838Z
+  Durasi      : 0 ms
+
+[0479] ORD-00479 | USER-0479
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.839Z
+  Durasi      : 0 ms
+
+[0480] ORD-00480 | USER-0480
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.840Z
+  Durasi      : 0 ms
+
+[0481] ORD-00481 | USER-0481
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.841Z
+  Durasi      : 0 ms
+
+[0482] ORD-00482 | USER-0482
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.841Z
+  Durasi      : 0 ms
+
+[0483] ORD-00483 | USER-0483
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.842Z
+  Durasi      : 0 ms
+
+[0484] ORD-00484 | USER-0484
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.843Z
+  Durasi      : 0 ms
+
+[0485] ORD-00485 | USER-0485
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.843Z
+  Durasi      : 0 ms
+
+[0486] ORD-00486 | USER-0486
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.844Z
+  Durasi      : 0 ms
+
+[0487] ORD-00487 | USER-0487
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.845Z
+  Durasi      : 0 ms
+
+[0488] ORD-00488 | USER-0488
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.846Z
+  Durasi      : 0 ms
+
+[0489] ORD-00489 | USER-0489
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.847Z
+  Durasi      : 0 ms
+
+[0490] ORD-00490 | USER-0490
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.848Z
+  Durasi      : 0 ms
+
+[0491] ORD-00491 | USER-0491
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.849Z
+  Durasi      : 0 ms
+
+[0492] ORD-00492 | USER-0492
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.849Z
+  Durasi      : 0 ms
+
+[0493] ORD-00493 | USER-0493
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.850Z
+  Durasi      : 0 ms
+
+[0494] ORD-00494 | USER-0494
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.851Z
+  Durasi      : 0 ms
+
+[0495] ORD-00495 | USER-0495
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.852Z
+  Durasi      : 0 ms
+
+[0496] ORD-00496 | USER-0496
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.852Z
+  Durasi      : 0 ms
+
+[0497] ORD-00497 | USER-0497
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.853Z
+  Durasi      : 0 ms
+
+[0498] ORD-00498 | USER-0498
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.854Z
+  Durasi      : 0 ms
+
+[0499] ORD-00499 | USER-0499
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.854Z
+  Durasi      : 0 ms
+
+[0500] ORD-00500 | USER-0500
+  Status      : DITOLAK — Tiket Habis
+  Sisa Tiket  : 0
+  Timestamp   : 2026-05-02T08:58:57.855Z
+  Durasi      : 0 ms
+
+======================================================================
+  Kesimpulan: Dengan prefetch(1), RabbitMQ memastikan hanya
+  SATU pesan diproses dalam satu waktu (Binary Semaphore).
+  Stok tiket tidak pernah negatif — Race Condition TERATASI.
+======================================================================

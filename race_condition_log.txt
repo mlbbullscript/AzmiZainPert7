@@ -1,0 +1,3526 @@
+======================================================================
+  RACE CONDITION LOG — Sistem Pemesanan Tiket Konser
+======================================================================
+  Tanggal         : 2/5/2026, 15.42.47
+  Stok Awal       : 100 tiket
+  Total Request   : 500 pemesanan concurrent
+  Max Delay       : 10 ms
+======================================================================
+
+[ RINGKASAN HASIL ]
+  Total Berhasil  : 500
+  Total Gagal     : 0
+  Sisa Tiket Final: -400
+  Oversold?       : ⚠️  YA — RACE CONDITION TERDETEKSI!
+  Tiket Negatif?  : 🔴 YA — sisaTiket < 0!
+  Waktu Eksekusi  : 15 ms
+
+======================================================================
+[ DETAIL TRANSAKSI ]
+======================================================================
+[0001] User-0002
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 99 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.233Z
+  Durasi      : 3 ms
+
+[0002] User-0016
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 98 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.233Z
+  Durasi      : 3 ms
+
+[0003] User-0020
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 97 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.233Z
+  Durasi      : 3 ms
+
+[0004] User-0021
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 96 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.233Z
+  Durasi      : 3 ms
+
+[0005] User-0025
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 95 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.233Z
+  Durasi      : 3 ms
+
+[0006] User-0034
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 94 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0007] User-0037
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 93 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0008] User-0044
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 92 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0009] User-0048
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 91 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0010] User-0051
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 90 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0011] User-0053
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 89 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0012] User-0066
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 88 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0013] User-0071
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 87 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0014] User-0074
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 86 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0015] User-0075
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 85 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0016] User-0077
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 84 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0017] User-0080
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 83 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0018] User-0087
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 82 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0019] User-0091
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 81 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0020] User-0094
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 80 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0021] User-0096
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 79 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0022] User-0098
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 78 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0023] User-0103
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 77 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0024] User-0109
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 76 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0025] User-0110
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 75 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0026] User-0111
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 74 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0027] User-0112
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 73 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0028] User-0128
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 72 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0029] User-0133
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 71 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0030] User-0137
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 70 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0031] User-0156
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 69 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0032] User-0166
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 68 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0033] User-0175
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 67 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0034] User-0178
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 66 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0035] User-0180
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 65 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0036] User-0184
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 64 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0037] User-0187
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 63 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0038] User-0190
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 62 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0039] User-0192
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 61 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0040] User-0200
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 60 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0041] User-0205
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 59 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0042] User-0208
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 58 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0043] User-0209
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 57 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0044] User-0216
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 56 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0045] User-0218
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 55 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0046] User-0219
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 54 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0047] User-0220
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 53 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0048] User-0221
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 52 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0049] User-0225
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 51 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0050] User-0229
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 50 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0051] User-0242
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 49 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0052] User-0244
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 48 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0053] User-0245
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 47 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0054] User-0251
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 46 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0055] User-0262
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 45 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0056] User-0267
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 44 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0057] User-0279
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 43 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0058] User-0287
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 42 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0059] User-0293
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 41 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0060] User-0294
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 40 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0061] User-0297
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 39 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0062] User-0298
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 38 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0063] User-0300
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 37 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0064] User-0301
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 36 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0065] User-0303
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 35 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0066] User-0318
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 34 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0067] User-0325
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 33 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0068] User-0330
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 32 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0069] User-0331
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 31 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0070] User-0345
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 30 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0071] User-0347
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 29 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0072] User-0361
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 28 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0073] User-0373
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 27 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0074] User-0374
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 26 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0075] User-0376
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 25 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0076] User-0377
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 24 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0077] User-0381
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 23 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0078] User-0385
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 22 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0079] User-0389
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 21 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0080] User-0395
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 20 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0081] User-0400
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 19 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0082] User-0401
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 18 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0083] User-0416
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 17 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0084] User-0423
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 16 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0085] User-0427
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 15 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0086] User-0435
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 14 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0087] User-0438
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 13 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0088] User-0442
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 12 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0089] User-0004
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 11 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0090] User-0027
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 10 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0091] User-0046
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 9 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0092] User-0050
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 8 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0093] User-0055
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 7 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0094] User-0059
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 6 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0095] User-0063
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 5 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0096] User-0076
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 4 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0097] User-0084
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 3 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0098] User-0088
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 2 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0099] User-0090
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 1 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0100] User-0093
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : 0 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0101] User-0099
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -1 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0102] User-0100
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -2 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0103] User-0102
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -3 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0104] User-0108
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -4 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0105] User-0119
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -5 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0106] User-0121
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -6 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0107] User-0138
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -7 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0108] User-0139
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -8 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0109] User-0140
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -9 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0110] User-0160
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -10 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0111] User-0163
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -11 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0112] User-0182
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -12 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0113] User-0236
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -13 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0114] User-0243
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -14 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0115] User-0260
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -15 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0116] User-0268
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -16 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0117] User-0269
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -17 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0118] User-0273
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -18 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0119] User-0278
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -19 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0120] User-0284
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -20 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0121] User-0322
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -21 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0122] User-0329
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -22 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0123] User-0340
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -23 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0124] User-0343
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -24 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0125] User-0346
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -25 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0126] User-0355
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -26 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0127] User-0357
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -27 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0128] User-0362
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -28 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0129] User-0382
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -29 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0130] User-0383
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -30 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0131] User-0001
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -31 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 5 ms
+
+[0132] User-0010
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -32 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0133] User-0017
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -33 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0134] User-0018
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -34 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0135] User-0024
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -35 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0136] User-0028
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -36 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0137] User-0054
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -37 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0138] User-0104
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -38 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0139] User-0115
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -39 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0140] User-0123
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -40 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0141] User-0135
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -41 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0142] User-0151
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -42 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0143] User-0153
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -43 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0144] User-0169
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -44 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0145] User-0170
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -45 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0146] User-0188
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -46 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0147] User-0195
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -47 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0148] User-0201
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -48 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0149] User-0214
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -49 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0150] User-0231
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -50 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0151] User-0233
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -51 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0152] User-0237
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -52 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0153] User-0272
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -53 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0154] User-0274
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -54 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0155] User-0275
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -55 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0156] User-0286
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -56 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0157] User-0307
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -57 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0158] User-0310
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -58 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0159] User-0320
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -59 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0160] User-0326
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -60 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0161] User-0332
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -61 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0162] User-0339
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -62 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0163] User-0360
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -63 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0164] User-0372
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -64 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0165] User-0396
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -65 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0166] User-0405
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -66 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0167] User-0469
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -67 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 2 ms
+
+[0168] User-0471
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -68 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 2 ms
+
+[0169] User-0472
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -69 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 2 ms
+
+[0170] User-0480
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -70 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 2 ms
+
+[0171] User-0494
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -71 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 2 ms
+
+[0172] User-0393
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -72 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0173] User-0397
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -73 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0174] User-0406
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -74 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0175] User-0408
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -75 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0176] User-0409
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -76 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0177] User-0412
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -77 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0178] User-0413
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -78 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0179] User-0424
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -79 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0180] User-0439
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -80 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0181] User-0441
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -81 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0182] User-0445
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -82 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0183] User-0450
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -83 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0184] User-0453
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -84 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0185] User-0456
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -85 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0186] User-0460
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -86 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 2 ms
+
+[0187] User-0493
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -87 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 2 ms
+
+[0188] User-0497
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -88 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 2 ms
+
+[0189] User-0026
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -89 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0190] User-0036
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -90 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0191] User-0039
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -91 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0192] User-0056
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -92 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0193] User-0060
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -93 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0194] User-0064
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -94 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0195] User-0073
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -95 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0196] User-0106
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -96 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0197] User-0107
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -97 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0198] User-0114
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -98 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0199] User-0116
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -99 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0200] User-0127
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -100 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0201] User-0145
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -101 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0202] User-0149
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -102 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0203] User-0150
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -103 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0204] User-0162
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -104 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0205] User-0165
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -105 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0206] User-0172
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -106 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0207] User-0181
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -107 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0208] User-0197
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -108 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0209] User-0203
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -109 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0210] User-0211
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -110 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0211] User-0213
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -111 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0212] User-0223
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -112 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0213] User-0224
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -113 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0214] User-0227
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -114 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0215] User-0238
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -115 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0216] User-0250
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -116 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0217] User-0252
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -117 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0218] User-0258
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -118 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0219] User-0259
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -119 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 4 ms
+
+[0220] User-0280
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -120 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0221] User-0285
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -121 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0222] User-0299
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -122 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0223] User-0302
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -123 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0224] User-0342
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -124 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0225] User-0348
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -125 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.234Z
+  Durasi      : 3 ms
+
+[0226] User-0351
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -126 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0227] User-0352
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -127 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0228] User-0356
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -128 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0229] User-0363
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -129 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0230] User-0375
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -130 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0231] User-0378
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -131 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0232] User-0386
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -132 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0233] User-0388
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -133 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0234] User-0006
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -134 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0235] User-0007
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -135 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0236] User-0008
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -136 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0237] User-0009
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -137 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0238] User-0014
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -138 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0239] User-0019
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -139 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0240] User-0035
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -140 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0241] User-0041
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -141 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0242] User-0045
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -142 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0243] User-0047
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -143 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0244] User-0049
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -144 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0245] User-0081
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -145 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0246] User-0083
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -146 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0247] User-0089
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -147 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0248] User-0113
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -148 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0249] User-0122
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -149 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0250] User-0126
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -150 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0251] User-0144
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -151 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0252] User-0158
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -152 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0253] User-0168
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -153 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0254] User-0189
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -154 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0255] User-0194
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -155 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0256] User-0196
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -156 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0257] User-0212
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -157 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0258] User-0222
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -158 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0259] User-0249
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -159 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0260] User-0261
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -160 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0261] User-0270
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -161 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0262] User-0271
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -162 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 5 ms
+
+[0263] User-0317
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -163 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0264] User-0321
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -164 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0265] User-0327
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -165 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0266] User-0328
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -166 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0267] User-0337
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -167 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0268] User-0368
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -168 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0269] User-0384
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -169 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0270] User-0461
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -170 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 3 ms
+
+[0271] User-0483
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -171 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 3 ms
+
+[0272] User-0496
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -172 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 3 ms
+
+[0273] User-0399
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -173 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0274] User-0426
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -174 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0275] User-0430
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -175 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0276] User-0432
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -176 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0277] User-0447
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -177 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.235Z
+  Durasi      : 4 ms
+
+[0278] User-0023
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -178 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0279] User-0030
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -179 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0280] User-0032
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -180 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0281] User-0042
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -181 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0282] User-0061
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -182 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0283] User-0068
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -183 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0284] User-0069
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -184 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0285] User-0079
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -185 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0286] User-0101
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -186 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0287] User-0105
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -187 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0288] User-0120
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -188 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0289] User-0129
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -189 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0290] User-0147
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -190 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0291] User-0152
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -191 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0292] User-0177
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -192 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0293] User-0179
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -193 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0294] User-0207
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -194 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0295] User-0240
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -195 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0296] User-0248
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -196 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0297] User-0256
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -197 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0298] User-0263
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -198 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0299] User-0264
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -199 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0300] User-0277
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -200 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0301] User-0291
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -201 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0302] User-0292
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -202 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0303] User-0295
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -203 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0304] User-0306
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -204 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0305] User-0309
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -205 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0306] User-0314
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -206 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0307] User-0323
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -207 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0308] User-0333
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -208 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0309] User-0338
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -209 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0310] User-0341
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -210 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0311] User-0349
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -211 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0312] User-0350
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -212 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0313] User-0359
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -213 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0314] User-0366
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -214 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0315] User-0369
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -215 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0316] User-0425
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -216 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0317] User-0437
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -217 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0318] User-0455
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -218 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0319] User-0407
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -219 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0320] User-0415
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -220 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0321] User-0417
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -221 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0322] User-0421
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -222 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0323] User-0428
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -223 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0324] User-0436
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -224 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0325] User-0449
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -225 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0326] User-0452
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -226 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0327] User-0457
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -227 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0328] User-0467
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -228 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0329] User-0479
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -229 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0330] User-0484
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -230 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0331] User-0487
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -231 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0332] User-0462
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -232 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0333] User-0464
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -233 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0334] User-0468
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -234 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0335] User-0470
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -235 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0336] User-0474
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -236 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0337] User-0478
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -237 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0338] User-0005
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -238 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0339] User-0013
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -239 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0340] User-0038
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -240 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0341] User-0052
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -241 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0342] User-0058
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -242 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0343] User-0062
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -243 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0344] User-0078
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -244 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0345] User-0082
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -245 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0346] User-0092
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -246 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0347] User-0095
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -247 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0348] User-0118
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -248 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0349] User-0125
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -249 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0350] User-0131
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -250 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0351] User-0134
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -251 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0352] User-0143
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -252 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0353] User-0146
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -253 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0354] User-0154
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -254 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0355] User-0157
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -255 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0356] User-0161
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -256 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0357] User-0167
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -257 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0358] User-0171
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -258 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0359] User-0176
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -259 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0360] User-0183
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -260 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0361] User-0185
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -261 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0362] User-0191
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -262 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0363] User-0198
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -263 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0364] User-0199
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -264 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0365] User-0215
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -265 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0366] User-0217
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -266 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0367] User-0226
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -267 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0368] User-0228
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -268 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0369] User-0235
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -269 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0370] User-0239
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -270 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0371] User-0246
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -271 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0372] User-0254
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -272 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0373] User-0257
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -273 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 13 ms
+
+[0374] User-0281
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -274 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0375] User-0282
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -275 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0376] User-0289
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -276 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0377] User-0304
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -277 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0378] User-0305
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -278 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0379] User-0315
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -279 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0380] User-0316
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -280 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0381] User-0334
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -281 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0382] User-0336
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -282 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0383] User-0353
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -283 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0384] User-0358
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -284 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0385] User-0367
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -285 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0386] User-0379
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -286 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0387] User-0380
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -287 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0388] User-0419
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -288 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0389] User-0434
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -289 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 12 ms
+
+[0390] User-0465
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -290 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0391] User-0466
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -291 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0392] User-0477
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -292 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0393] User-0489
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -293 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0394] User-0491
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -294 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0395] User-0495
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -295 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.243Z
+  Durasi      : 11 ms
+
+[0396] User-0498
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -296 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0397] User-0003
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -297 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0398] User-0033
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -298 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0399] User-0043
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -299 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0400] User-0067
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -300 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0401] User-0085
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -301 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0402] User-0097
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -302 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0403] User-0136
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -303 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0404] User-0141
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -304 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0405] User-0148
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -305 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0406] User-0155
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -306 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0407] User-0173
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -307 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0408] User-0202
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -308 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0409] User-0230
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -309 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0410] User-0232
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -310 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0411] User-0234
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -311 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0412] User-0247
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -312 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0413] User-0255
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -313 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0414] User-0265
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -314 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0415] User-0266
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -315 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0416] User-0276
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -316 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0417] User-0288
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -317 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0418] User-0290
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -318 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0419] User-0296
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -319 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0420] User-0308
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -320 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0421] User-0313
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -321 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0422] User-0324
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -322 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0423] User-0335
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -323 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0424] User-0354
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -324 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0425] User-0364
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -325 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0426] User-0365
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -326 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0427] User-0370
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -327 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0428] User-0387
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -328 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0429] User-0391
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -329 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0430] User-0398
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -330 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0431] User-0402
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -331 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0432] User-0403
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -332 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0433] User-0404
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -333 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0434] User-0410
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -334 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0435] User-0411
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -335 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0436] User-0418
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -336 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0437] User-0422
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -337 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0438] User-0429
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -338 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0439] User-0431
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -339 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0440] User-0443
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -340 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0441] User-0444
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -341 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0442] User-0448
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -342 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0443] User-0451
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -343 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0444] User-0458
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -344 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0445] User-0463
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -345 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0446] User-0475
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -346 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0447] User-0476
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -347 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0448] User-0481
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -348 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0449] User-0482
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -349 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0450] User-0485
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -350 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0451] User-0490
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -351 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0452] User-0500
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -352 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0453] User-0011
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -353 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0454] User-0012
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -354 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0455] User-0015
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -355 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0456] User-0022
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -356 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0457] User-0029
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -357 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0458] User-0031
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -358 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0459] User-0040
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -359 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0460] User-0057
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -360 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0461] User-0065
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -361 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0462] User-0070
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -362 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0463] User-0072
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -363 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0464] User-0086
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -364 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0465] User-0117
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -365 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0466] User-0124
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -366 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0467] User-0130
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -367 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0468] User-0132
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -368 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0469] User-0142
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -369 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0470] User-0159
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -370 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0471] User-0164
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -371 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0472] User-0174
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -372 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0473] User-0186
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -373 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0474] User-0193
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -374 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0475] User-0204
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -375 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0476] User-0206
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -376 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0477] User-0210
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -377 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0478] User-0241
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -378 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0479] User-0253
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -379 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 14 ms
+
+[0480] User-0283
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -380 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0481] User-0311
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -381 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0482] User-0312
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -382 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0483] User-0319
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -383 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0484] User-0344
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -384 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0485] User-0371
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -385 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0486] User-0390
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -386 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0487] User-0392
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -387 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0488] User-0394
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -388 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0489] User-0414
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -389 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0490] User-0420
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -390 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0491] User-0433
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -391 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0492] User-0440
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -392 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0493] User-0446
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -393 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0494] User-0454
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -394 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 13 ms
+
+[0495] User-0459
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -395 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0496] User-0473
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -396 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0497] User-0486
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -397 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0498] User-0488
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -398 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0499] User-0492
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -399 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+[0500] User-0499
+  Status      : BERHASIL
+  Snapshot    : 100 (nilai saat dibaca)
+  Sisa Tiket  : -400 (nilai setelah operasi)
+  Timestamp   : 2026-05-02T08:42:47.244Z
+  Durasi      : 12 ms
+
+======================================================================
+  Penjelasan Race Condition:
+  Kolom 'Snapshot' vs 'Sisa Tiket' yang tidak konsisten
+  menunjukkan bahwa pembacaan nilai STALE telah terjadi.
+  Jika 'Sisa Tiket' < 0, stok negatif telah terjadi (OVERSOLD).
+======================================================================

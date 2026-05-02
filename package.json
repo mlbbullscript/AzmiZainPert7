@@ -1,0 +1,16 @@
+{
+  "name": "rabbitmq-ticket-semaphore",
+  "version": "1.0.0",
+  "description": "Simulasi Binary Semaphore menggunakan RabbitMQ untuk mencegah Race Condition pada sistem pemesanan tiket konser",
+  "main": "consumer.js",
+  "scripts": {
+    "producer": "node producer.js",
+    "consumer": "node consumer.js",
+    "start:docker": "docker run -d --name rabbitmq-ticket -p 5672:5672 -p 15672:15672 rabbitmq:3-management"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.4"
+  },
+  "author": "",
+  "license": "ISC"
+}

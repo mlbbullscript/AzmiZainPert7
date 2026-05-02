@@ -1,0 +1,90 @@
+======================================================================
+  BENCHMARK RESULT — Race Condition vs RabbitMQ Queue
+  Dibuat: 2/5/2026, 16.00.08
+  Stok Tiket: 100 | Skenario: 100, 500, 1000 request
+======================================================================
+
+┌────────────┬────────────────────┬─────────────┬───────────┬───────────┬──────────────┬───────────────┬───────────────────┐
+│ Skenario   │ Versi              │ Waktu (ms)  │ Terjual   │ Ditolak   │ Sisa Tiket   │ Throughput/s  │ Konsistensi       │
+├────────────┼────────────────────┼─────────────┼───────────┼───────────┼──────────────┼───────────────┼───────────────────┤
+│ 100 req    │ Tanpa Queue (RC)   │ 15          │ 100       │ 0         │ 0            │ 6667/s        │ CONSISTENT        │
+│            │ RabbitMQ Queue     │ 121         │ 100       │ 0         │ 0            │ 826/s         │ CONSISTENT        │
+├────────────┼────────────────────┼─────────────┼───────────┼───────────┼──────────────┼───────────────┼───────────────────┤
+│ 500 req    │ Tanpa Queue (RC)   │ 15          │ 500       │ 0         │ -400         │ 33333/s       │ INCONSISTENT      │
+│            │ RabbitMQ Queue     │ 392         │ 100       │ 400       │ 0            │ 1276/s        │ CONSISTENT        │
+├────────────┼────────────────────┼─────────────┼───────────┼───────────┼──────────────┼───────────────┼───────────────────┤
+│ 1000 req   │ Tanpa Queue (RC)   │ 16          │ 1000      │ 0         │ -900         │ 62500/s       │ INCONSISTENT      │
+│            │ RabbitMQ Queue     │ 836         │ 100       │ 900       │ 0            │ 1196/s        │ CONSISTENT        │
+└────────────┴────────────────────┴─────────────┴───────────┴───────────┴──────────────┴───────────────┴───────────────────┘
+
+
+══════════════════════════════════════════════════════════════════════
+  ANALISIS OTOMATIS
+══════════════════════════════════════════════════════════════════════
+
+▶  Skenario 100 Request
+   Overhead Queue    : +706.7% lebih lambat
+   Throughput RC     : 6.667 req/s
+   Throughput Queue  : 826 req/s
+   Konsistensi RC    : ✅ Konsisten
+   Konsistensi Queue : ✅ Konsisten
+
+▶  Skenario 500 Request
+   Overhead Queue    : +2513.3% lebih lambat
+   Throughput RC     : 33.333 req/s
+   Throughput Queue  : 1.276 req/s
+   Konsistensi RC    : ❌ INKONSISTEN (oversold)
+   Konsistensi Queue : ✅ Konsisten
+   Kerugian RC       : 400 tiket oversold (data rusak!)
+
+▶  Skenario 1000 Request
+   Overhead Queue    : +5125.0% lebih lambat
+   Throughput RC     : 62.500 req/s
+   Throughput Queue  : 1.196 req/s
+   Konsistensi RC    : ❌ INKONSISTEN (oversold)
+   Konsistensi Queue : ✅ Konsisten
+   Kerugian RC       : 900 tiket oversold (data rusak!)
+
+──────────────────────────────────────────────────────────────────────
+  MENGAPA OVERHEAD QUEUE ACCEPTABLE UNTUK SISTEM TIKET?
+──────────────────────────────────────────────────────────────────────
+
+  1. INTEGRITAS DATA > KECEPATAN
+     Sistem tiket menangani transaksi keuangan nyata.
+     Oversold = pengembalian dana, kerugian reputasi, masalah hukum.
+     Overhead beberapa ratus ms jauh lebih murah dari kompensasi.
+
+  2. OVERHEAD TERJADI DI LAYER INFRASTRUKTUR, BUKAN BISNIS
+     Latency queue (5–50ms/pesan) tidak terasa oleh end-user
+     karena UI sudah menampilkan 'Sedang diproses...' saat menunggu.
+
+  3. SCALABILITY HORIZONTAL
+     RabbitMQ mendukung multiple consumer worker secara paralel.
+     Throughput bisa ditingkatkan dengan menambah consumer,
+     TANPA mengorbankan konsistensi stok.
+
+──────────────────────────────────────────────────────────────────────
+  TRADE-OFF: KECEPATAN vs KONSISTENSI
+──────────────────────────────────────────────────────────────────────
+
+  ┌──────────────────────┬──────────────────────────────────────┐
+  │ Aspek                │ Race Condition  │  RabbitMQ Queue    │
+  ├──────────────────────┼─────────────────┼────────────────────┤
+  │ Kecepatan            │ ⚡ Sangat cepat │ 🐢 Lebih lambat    │
+  │ Konsistensi Data     │ ❌ Tidak aman   │ ✅ Terjamin        │
+  │ Kemungkinan Oversold │ ❌ Sangat tinggi│ ✅ Tidak mungkin   │
+  │ Cocok untuk tiket?   │ ❌ Berbahaya    │ ✅ Wajib digunakan │
+  │ Fault Tolerance      │ ❌ Tidak ada    │ ✅ ACK + requeue   │
+  │ Scalability          │ ⚠️ Terbatas     │ ✅ Multi-consumer  │
+  └──────────────────────┴─────────────────┴────────────────────┘
+
+  KESIMPULAN:
+  Untuk sistem pemesanan tiket, konsistensi data adalah NON-NEGOTIABLE.
+  Overhead RabbitMQ adalah biaya yang WAJIB dibayar untuk kebenaran data.
+  Gunakan Race Condition HANYA untuk operasi read-only yang idempotent.
+
+══════════════════════════════════════════════════════════════════════
+
+======================================================================
+  END OF BENCHMARK REPORT
+======================================================================
